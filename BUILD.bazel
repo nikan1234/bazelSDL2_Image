@@ -5,9 +5,9 @@ cc_library(
   visibility = ["//visibility:public"],
   deps = [
     	":SDL2image_impl",
-	":SDL2image_jpeg"
-	":SDL2image_png"
-	":SDL2image_zlib"
+	":SDL2image_jpeg",
+	":SDL2image_png",
+	":SDL2image_zlib",
   ],
 )
 
