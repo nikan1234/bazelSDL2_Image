@@ -4,13 +4,37 @@ cc_library(
   strip_include_prefix = "include",
   visibility = ["//visibility:public"],
   deps = [
-    ":SDL2imageimpl"
+    	":SDL2image_impl",
+	":SDL2image_jpeg"
+	":SDL2image_png"
+	":SDL2image_zlib"
   ],
 )
 
 cc_import(
-  name = "SDL2imageimpl",
+  name = "SDL2image_impl",
   interface_library = "lib/x64/SDL2_image.lib",
   shared_library = "lib/x64/SDL2_image.dll",
+  visibility = ["//visibility:private"],
+)
+
+cc_import(
+  name = "SDL2image_jpeg",
+  interface_library = "lib/x64/SDL2_image.lib",
+  shared_library = "lib/x64/libjpeg-9.dll",
+  visibility = ["//visibility:private"],
+)
+
+cc_import(
+  name = "SDL2image_png",
+  interface_library = "lib/x64/SDL2_image.lib",
+  shared_library = "lib/x64/libpng16-16.dll",
+  visibility = ["//visibility:private"],
+)
+
+cc_import(
+  name = "SDL2image_zlib",
+  interface_library = "lib/x64/SDL2_image.lib",
+  shared_library = "lib/x64/zlib1.dll",
   visibility = ["//visibility:private"],
 )
